@@ -9,7 +9,7 @@
 </head>
 <body>
     <div>
-    <form action="welcome_get.php" method="get">
+    <form action="welcome_get.php" method="post">
         <label for="name">Naam:</label> <br>
         <input type="text" name="name"> <br> <br>
 
