@@ -11,7 +11,8 @@
 
     <div id="input">
     <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?> method="post">
-        <label for="name">Naam:</label> <br>
+        <label for="name">Naam:</label> 
+        <span><?php if (isset($nameErr)) echo $nameErr;?></span><br>
         <input type="text" name="name"> <br> <br>
 
         <label for="email">Email:</label> <br>
@@ -21,7 +22,18 @@
     </form>
 
     <?php 
+
+        $name = $email = '';
+
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if (empty($_POST['name'])) {
+                print 'Unvalid Name';
+                $nameErr = 'Naam is verplicht';
+            } else {
+                print 'Valid Name';
+                $name = $_POST['name'];
+                test_input($name);
+            }
 
 
 
