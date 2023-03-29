@@ -1,4 +1,3 @@
-
 <?php 
 
     $name = $email = '';
@@ -50,22 +49,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
     <title>Form</title>
+    <style>span {color: red;}</style>
 </head>
 <body>
 
     <div id="input">
     <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?> method="post">
         <label for="name">Naam:</label> <br>
-        <input type="text" name="name"> <br>
-        <span><?php if (isset($nameErr)) echo $nameErr; ?></span> <br> <br>
+        <input type="text" name="name"> * <br>
+        <span><?php echo $nameErr; ?></span> <br> <br>
 
         <label for="email">Email:</label> <br>
-        <input type="email" name="email"> <br>
-        <span><?php if (isset($emailErr)) echo $emailErr; ?></span> <br> <br>
+        <input type="email" name="email"> * <br>
+        <span><?php echo $emailErr; ?></span> <br> <br>
         
         <input type="submit" value="Verzend" name="submit"> 
-
     </form>
     </div>
+    
 </body>
 </html>
