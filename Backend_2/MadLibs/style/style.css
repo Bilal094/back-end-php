@@ -1,0 +1,86 @@
+/* Body and title */
+
+body {
+    background-color: #3b3a34;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 50px;
+}
+
+h2 {
+    padding-left: 20px;
+}
+
+/* Nav bar */
+
+nav {
+    background-color: hsl(7.11deg 80% 37.25%);
+    list-style-type: none;
+    color: white;
+    padding-bottom: 4px;
+}
+
+nav li {
+    margin-left: 15px;
+    display: inline-block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+/* Form section */
+
+section {
+    background-color: white;
+    width: 50%;
+    margin: auto;
+    font-size: 20px;
+}
+
+form {
+    padding-left: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 10px;
+}
+
+label {
+    font-size: 18px;
+    padding-top: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+#submit {
+    width: 35%;
+    grid-column: 2;
+}
+
+span {
+    color: red;
+}
+
+/* Footer */
+
+footer {
+    background-color: white;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    padding-top: 10px;
+}
+  
