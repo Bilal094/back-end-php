@@ -1,14 +1,3 @@
-<?php
-
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    $animalErr = '';
-    if (empty($_POST['animal'])) {
-        $animalErr = 'test';
-    }
-}
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,32 +21,39 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         </nav>
 
         <h2>Er heerst paniek...</h2>
-        <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
+        <form action="paniek_handling.php" method="post">
         
             <label for="animal">Welk dier zou je nooit als huisdier willen hebben?</label> 
-            <span><?php if (isset($animalErr)) echo $animalErr; ?></span>
             <input type="text" name="animal"> 
+            <span><?php if (isset($animalErr)) echo $animalErr; ?></span>
 
             <label for="person">Wie is de belangrijkste persoon in je leven?</label>
             <input type="text" name="person">
+            <span><?php if (isset($personErr)) echo $personErr; ?></span>
 
             <label for="country">In welk land zou je graag willen wonen?</label>
             <input type="text" name="country">
+            <span><?php if (isset($countryErr)) echo $countryErr; ?></span>
 
             <label for="bored">Wat doe je als je je verveelt?</label>
             <input type="text" name="bored">
+            <span><?php if (isset($boredErr)) echo $boredErr; ?></span>
 
             <label for="toy">Met welk speelgoed speelde je als kind het meest?</label>
             <input type="text" name="toy">
+            <span><?php if (isset($toyErr)) echo $toyErr; ?></span>
 
             <label for="docent">Bij welk docent spijbel je het liefst</label>
             <input type="text" name="docent">
+            <span><?php if (isset($docentErr)) echo $docentErr; ?></span>
 
-            <label for="money">Als je € 100.000 ,- had, wat zou je dan kopen?</label>
+            <label for="money">Als je € 100.000,- had, wat zou je dan kopen?</label>
             <input type="text" name="money">
+            <span><?php if (isset($moneyErr)) echo $moneyErr; ?></span>
 
             <label for="hobby">Wat is je favoriete bezigheid?</label>
             <input type="text" name="hobby">
+            <span><?php if (isset($hobbyErr)) echo $hobbyErr; ?></span>
 
             <input type="submit" name="submit" id="submit">    
         </form>
