@@ -13,7 +13,7 @@
         MadLibs
     </h1>
 
-    <section>
+    <section id="parent">
 
         <nav>
             <li><a href="paniek.php">Er heerst paniek...</a></li>
@@ -21,7 +21,7 @@
         </nav>
 
         <h2>Er heerst paniek...</h2>
-        <form action="paniek_handling.php" method="post">
+        <form action="paniek_result.php" method="post">
         
             <label for="animal">Welk dier zou je nooit als huisdier willen hebben?</label> 
             <input type="text" name="animal"> 
@@ -63,5 +63,6 @@
     <footer>
         Bilal Achrifi © 2023
     </footer>
+
 </body>
 </html>
