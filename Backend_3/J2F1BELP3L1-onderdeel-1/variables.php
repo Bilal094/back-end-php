@@ -1,0 +1,5 @@
+<?php
+
+$fullname = 'Bilal Achrifi';
+
+?>
