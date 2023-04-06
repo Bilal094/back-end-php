@@ -13,24 +13,24 @@
         MadLibs
     </h1>
 
-    <section>
+    <section id="parent">
 
         <nav>
             <li><a href="paniek.php">Er heerst paniek...</a></li>
             <li><a href="onkunde.php">Onkunde</a></li>
         </nav>
 
-        <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
-
-            <h2>Onkunde</h2>
-
-    
-        </form>
+        <h2>Onkunde</h2>
+        <p>Er zijn veel mensen die niet kunnen <? echo $goal; ?>. Neem nou <? echo $person; ?>. Zelfs met de hulp
+        van een <? echo $vacation; ?> of zelfs <? echo $number; ?> kan <? echo $person; ?> niet <? echo $goal; ?>. Dat heeft niet te maken met
+        een gebrek aan <? echo $pro; ?>, maar met een te veel aan <? echo $con; ?>. Te veel <? echo $con; ?>
+        leidt tot <? echo $worst; ?> en dat is niet goed als je wilt <? echo $goal; ?>. Helaas voor <? echo $person; ?>.</p> <br>
 
     </section>
 
     <footer>
         Bilal Achrifi © 2023
     </footer>
+
 </body>
 </html>

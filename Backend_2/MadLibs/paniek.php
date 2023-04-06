@@ -43,7 +43,7 @@
             <input type="text" name="toy">
             <span><?php if (isset($toyErr)) echo $toyErr; ?></span>
 
-            <label for="docent">Bij welk docent spijbel je het liefst</label>
+            <label for="docent">Bij welk docent spijbel je het liefst?</label>
             <input type="text" name="docent">
             <span><?php if (isset($docentErr)) echo $docentErr; ?></span>
 
