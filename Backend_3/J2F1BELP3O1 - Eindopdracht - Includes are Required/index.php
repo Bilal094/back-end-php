@@ -31,10 +31,11 @@
             break;
         }
       } else {
-        null;
+        echo '<div id="indexDiv">';
+        echo '<p id="index">Klik op een van de onderwerpen hierboven</p>';
+        echo '</div>';
       }
   ?>
-
 
 	
 	<!-- laad hier via php je footer in (vanuit je includes map)-->
