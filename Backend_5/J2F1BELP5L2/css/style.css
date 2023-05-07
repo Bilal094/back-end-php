@@ -21,8 +21,8 @@ header p {
     padding: 0px;
 }
 
-header img {
-    width: 10%;
+header a img {
+    width: 20%;
 }
 
 header a {
@@ -43,6 +43,7 @@ section {
     align-items: end;
     justify-content: center;
 }
+
 section img {
     width: 20%;
     height: 20%;
