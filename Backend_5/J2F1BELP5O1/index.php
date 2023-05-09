@@ -1,8 +1,51 @@
-<!-- Connectie maken met pdo database, enz. en het aantal characters/info over characters hier tonen -->
-<!-- Alle pagina's zijn valide HTML (W3Cvalidator).
-Code voor karakterkaarten/detailpagina's mag je niet meer dan 1 keer hebben geschreven (je gaat dit dus dynamisch hergebruiken).
-Je database connectie is veilig en je maakt gebruik van PDO!.
-Als je een character in de database toevoegd moet alles blijven werken.
-Onderaan alle paginas staat je naam een copyright.
-Maak gebruik van includes en/of requires.
-De applicatie moet blijven werken als er 1 of meerdere characters in de database word toegevoegd en als er 1 of meerdere verwijderd worden. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Characters</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="resources/css/style.css" rel="stylesheet"/>
+</head>
+    <body>
+
+    <!-- Include the database connection -->
+    <? require_once('connect.php'); ?>
+    <!-- Query for count of characters -->
+    <?
+        $stmtCount = $pdo->query('SELECT COUNT(*) FROM characters');
+        $resultCount = $stmtCount->fetchColumn();
+    ?>
+    <!-- Qurey for the characters -->
+    <?
+        $stmtChar = $pdo->query('SELECT * FROM characters');
+    ?>
+    <header><h1>Alle <? echo $resultCount;?> characters uit de database</h1>
+
+    </header>
+    <? while($row = $stmtChar->fetch(PDO::FETCH_ASSOC)) { ?>
+        <div id="container">
+            <a class="item" href="character.html">
+
+            
+                <div class="left">
+                    <img class="avatar" src="resources/images/<?echo $row['avatar']?>">
+                </div>
+                <div class="right">
+                    <h2><?echo $row['name']?></h2>
+                    <div class="stats">
+                        <ul class="fa-ul">
+                            <li><span class="fa-li"><i class="fas fa-heart"></i></span> <?echo $row['health']?></li>
+                            <li><span class="fa-li"><i class="fas fa-fist-raised"></i></span> <?echo $row['attack']?></li>
+                            <li><span class="fa-li"><i class="fas fa-shield-alt"></i></span><?echo $row['defense']?></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="detailButton"><i class="fas fa-search"></i> bekijk</div>
+            </a>
+
+        </div>
+    <? } ?>
+
+    <footer>&copy; Bilal Achrifi 2023</footer>
+    </body>
+</html>
