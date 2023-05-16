@@ -11,3 +11,9 @@ try {
 } catch (PDOException $e) {
     echo "Verbinding mislukt: " . $e->getMessage();
 }
+
+// Query for the characters 
+
+$stmtChar = $pdo->query('SELECT * FROM characters');
+
+?>

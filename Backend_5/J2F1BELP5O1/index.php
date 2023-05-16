@@ -15,18 +15,13 @@
         $stmtCount = $pdo->query('SELECT COUNT(*) FROM characters');
         $resultCount = $stmtCount->fetchColumn();
     ?>
-    <!-- Qurey for the characters -->
-    <?
-        $stmtChar = $pdo->query('SELECT * FROM characters');
-    ?>
     <header><h1>Alle <? echo $resultCount;?> characters uit de database</h1>
 
     </header>
-    <? while($row = $stmtChar->fetch(PDO::FETCH_ASSOC)) { ?>
-        <div id="container">
-            <a class="item" href="character.html">
 
-            
+        <div id="container">
+        <? while($row = $stmtChar->fetch(PDO::FETCH_ASSOC)) { ?>
+            <a class="item" href="character.php?subject=<?echo $row['name']?>">
                 <div class="left">
                     <img class="avatar" src="resources/images/<?echo $row['avatar']?>">
                 </div>
@@ -42,9 +37,9 @@
                 </div>
                 <div class="detailButton"><i class="fas fa-search"></i> bekijk</div>
             </a>
-
+            <? } ?>
         </div>
-    <? } ?>
+
 
     <footer>&copy; Bilal Achrifi 2023</footer>
     </body>
